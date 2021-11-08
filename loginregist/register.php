@@ -1,3 +1,10 @@
+<?php
+
+require_once'../includes/koneksi.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +33,7 @@
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name"/>
+                                <input type="text" name="username" id="name" placeholder="Username"/>
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
@@ -34,7 +41,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                                <input type="password" name="password" id="pass" placeholder="Password"/>
                             </div>
                             <!-- <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
@@ -51,12 +58,31 @@
                     </div>
                     <div class="signup-image">
                         <figure><img src="images/ware2.png" alt="sing up image"></figure>
-                        <a href="login.php" class="signup-image-link">I am already member</a>
+                        <a href="#" class="signup-image-link">I am already member</a>
                     </div>
                 </div>
             </div>
         </section>
     </div>
+
+    <?php
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	$email = $_POST['email'];
+
+	$sql = "INSERT INTO akun (username,password,email) VALUES ('$username','$password','$email')";
+
+	if($koneksi->query($sql)===TRUE){
+		session_start();
+        $_SESSION["nama"] = $username;
+        header("Location: login.php");
+	} else {
+		echo "Terjadi kesalahan:".$sql."<br/>".$koneksi->error;
+	}
+
+	$koneksi->close();
+
+	?>
 
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
