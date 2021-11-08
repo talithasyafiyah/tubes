@@ -66,16 +66,15 @@ require_once'../includes/koneksi.php';
     </div>
 
     <?php
+    
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$email = $_POST['email'];
 
-	$sql = "INSERT INTO akun (username,password,email) VALUES ('$username','$password','$email')";
+	$sql = "INSERT INTO akun (username, password, email) VALUES ('$username','$password','$email')";
 
 	if($koneksi->query($sql)===TRUE){
-		session_start();
-        $_SESSION["nama"] = $username;
-        header("Location: login.php");
+        echo "Registrasi berhasil";
 	} else {
 		echo "Terjadi kesalahan:".$sql."<br/>".$koneksi->error;
 	}
