@@ -37,9 +37,17 @@
 								<?php
 								if(isset($_GET['pesan'])) {
 									if($_GET['pesan'] == "gagal") {
-									echo '<div class="alert alert-warning" role="alert">
-									Username atau password tidak sesuai!
-									</div>';
+										echo '<div class="alert alert-warning" role="alert">
+										Username atau password tidak sesuai.
+										</div>';
+									} elseif ($_GET['pesan'] == "username") {
+										echo '<div class="alert alert-warning" role="alert">
+										Username belum diisi.
+										</div>';
+									} elseif ($_GET['pesan'] == "password") {
+										echo '<div class="alert alert-warning" role="alert">
+										Password belum diisi.
+										</div>';
 									}
 								}
                                 

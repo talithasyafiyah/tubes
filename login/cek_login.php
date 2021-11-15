@@ -10,9 +10,9 @@ $username = mysqli_escape_string($koneksi, $_POST['username']);
 $password = mysqli_escape_string($koneksi, $pass);
 
     if (empty($username)) {
-        echo "Username harus diisi";
+        header("location:login.php?pesan=username");
     } elseif (empty($password)) {
-        echo "Password harus diisi";
+        header("location:login.php?pesan=password");
     } else {
         $login = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username' and password = '$password'");
         $cek = mysqli_num_rows($login);
