@@ -1,6 +1,42 @@
 <?php
 
 	require_once'../includes/koneksi.php';
+	if (isset($_POST['submit'])){
+		$username = ($_POST['username']);
+		$nama = $_POST['nama'];
+		$email = $_POST['email'];
+		$pass = $_POST['password'];
+		$cpass = $_POST['cpassword'];
+		$password = password_hash($pass, PASSWORD_BCRYPT);
+		$cpassword = password_hash($cpass, PASSWORD_BCRYPT);
+		$level = 'Pengunjung';
+		$usernamecheck = (mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username'")));
+		$msg = "";
+
+		if (empty($username)) {
+			header("location:register.php?pesan=nousername");
+		} elseif (empty($nama)) {
+			header("location:register.php?pesan=nonama");
+		} elseif (empty($email)) {
+			header("location:register.php?pesan=noemail");
+		} elseif (empty($pass || $cpass)) {
+			header("location:register.php?pesan=nopass");
+		} elseif ($pass != $cpass) {
+			header("location:register.php?pesan=match");
+		} elseif ($usernamecheck > 0) {
+			header("location:register.php?pesan=check");
+		} else {
+			$sql = "INSERT INTO user (username,nama,email,password,level) VALUES ('$username','$nama','$email','$password','Pengunjung')";
+																			
+			if($koneksi->query($sql)===TRUE){
+				header("location:selamat.php");
+			} else {
+				echo "Terjadi kesalahan:".$sql."<br/>".$koneksi->error;
+			}
+		}
+	}
+									
+	$koneksi->close();
 ?>
 
 <!doctype html>
@@ -48,60 +84,61 @@
 			      			<div class="w-100">
 			      				<h3 class="mb-4">Sign Up</h3>
 								  <?php
-								  	if (isset($_POST['submit'])) {
-										$username = ($_POST['username']);
-										$nama = $_POST['nama'];
-										$email = $_POST['email'];
-										$password = md5($_POST['password']);
-										$level = $_POST['level'];
-										$usernamecheck = (mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM user WHERE username='$_POST[username]'")));
-
-										if ($usernamecheck > 0) {
+								  	if(isset($_GET['pesan'])) {
+										if($_GET['pesan'] == "nousername") {
+											echo '<div class="alert alert-warning" role="alert">
+											Username belum diisi.
+											</div>';
+										} elseif ($_GET['pesan'] == "nonama") {
+											echo '<div class="alert alert-warning" role="alert">
+											Nama belum diisi.
+											</div>';
+										} elseif ($_GET['pesan'] == "noemail") {
+											echo '<div class="alert alert-warning" role="alert">
+											Email belum diisi.
+											</div>';
+										} elseif ($_GET['pesan'] == "nopass") {
+											echo '<div class="alert alert-warning" role="alert">
+											Password belum diisi.
+											</div>';
+										} elseif ($_GET['pesan'] == "match") {
+											echo '<div class="alert alert-warning" role="alert">
+											Password tidak sesuai.
+											</div>';
+										} elseif ($_GET['pesan'] == "check") {
 											echo '<div class="alert alert-warning" role="alert">
 											Username tidak tersedia.
 											</div>';
-										} else {
-											$sql = "INSERT INTO user (username,nama,email,password,level) VALUES ('$username','$nama','$email','$password','$level')";
-																		
-											if($koneksi->query($sql)===TRUE){
-												header("Location: selamat.php");
-											} else {
-												echo "Terjadi kesalahan:".$sql."<br/>".$koneksi->error;
-											}
 										}
 									}
-									$koneksi->close();
-								?>
+								  ?>
 			      			</div>
 			      		</div>
-						<form method="POST" class="signin-form">
+						<form method="POST" class="signin-form" novalidate="">
 			      			<div class="form-group mb-3">
 			      			<label class="label" for="name">Username</label>
-			      			<input type="text" class="form-control" placeholder="Username" name="username" required>
+			      			<input type="text" class="form-control" placeholder="Username" name="username">
 			      			</div>
 
 							<div class="form-group mb-3">
 			      			<label class="label" for="nama">Nama</label>
-			      			<input type="text" class="form-control" placeholder="Nama" name="nama" required>
+			      			<input type="text" class="form-control" placeholder="Nama" name="nama">
 			      			</div>
 
 							<div class="form-group mb-3">
 		            			<label class="label" for="email">Email</label>
-		              			<input type="email" class="form-control" placeholder="Email" name="email" required>
+		              			<input type="email" class="form-control" placeholder="Email" name="email">
 		            		</div>
 
 		            		<div class="form-group mb-3">
 		            			<label class="label" for="password">Password</label>
-		              			<input type="password" class="form-control" placeholder="Password" name="password" required>
+		              			<input type="password" class="form-control" placeholder="Password" name="password">
 		            		</div>
 
 							<div class="form-group mb-3">
-								<label class="label" for="level">Level</label>
-								<select class="form-select" name="level" aria-label="Disabled select example">
-								<option>Supplier</option>
-								<option>Member</option>
-								</select>
-			      			</div>
+		            			<label class="label" for="password">Confirm Password</label>
+		              			<input type="password" class="form-control" placeholder="Confirm Password" name="cpassword">
+		            		</div>
 
 							<div class="w-100">
 			            		<label class="checkbox-wrap checkbox-primary mb-0">I agree all statements in Terms of service

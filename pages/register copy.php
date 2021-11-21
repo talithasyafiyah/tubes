@@ -1,3 +1,8 @@
+<?php
+
+	require_once'../includes/koneksi.php';
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,7 +28,7 @@
 			height: 50px;
 		}
 	</style>
-
+	
 	</head>
 	<body>
 	<section class="ftco-section">
@@ -42,9 +47,58 @@
 			      		<div class="d-flex">
 			      			<div class="w-100">
 			      				<h3 class="mb-4">Sign Up</h3>
+								  <?php
+								  	if (isset($_POST['submit'])){
+										$username = ($_POST['username']);
+										$nama = $_POST['nama'];
+										$email = $_POST['email'];
+										$pass = $_POST['password'];
+										$cpass = $_POST['cpassword'];
+										$password = password_hash($pass, PASSWORD_BCRYPT);
+										$cpassword = password_hash($cpass, PASSWORD_BCRYPT);
+										$level = 'Pengunjung';
+										$usernamecheck = (mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username'")));
+
+										if (empty($username)) {
+											echo '<div class="alert alert-warning" role="alert">
+												Username belum diisi.
+												</div>';
+										} elseif (empty($nama)) {
+											echo '<div class="alert alert-warning" role="alert">
+												Nama belum diisi.
+												</div>';
+										} elseif (empty($email)) {
+											echo '<div class="alert alert-warning" role="alert">
+												Email belum diisi.
+												</div>';
+										} elseif (empty($pass || $cpass)) {
+											echo '<div class="alert alert-warning" role="alert">
+												Password belum diisi.
+												</div>';
+										} elseif ($pass != $cpass) {
+											echo '<div class="alert alert-warning" role="alert">
+												Password tidak sama!
+												</div>';
+										} elseif ($usernamecheck > 0) {
+												echo '<div class="alert alert-warning" role="alert">
+												Username tidak tersedia.
+												</div>';
+										} else {
+											$sql = "INSERT INTO user (username,nama,email,password,level) VALUES ('$username','$nama','$email','$password','Pengunjung')";
+																			
+											if($koneksi->query($sql)===TRUE){
+												header("location:selamat.php");
+											} else {
+												echo "Terjadi kesalahan:".$sql."<br/>".$koneksi->error;
+											}
+										}
+									}
+									
+									$koneksi->close();
+								?>
 			      			</div>
 			      		</div>
-						<form action="register.php" action="POST" class="signin-form">
+						<form method="POST" class="signin-form" novalidate="">
 			      			<div class="form-group mb-3">
 			      			<label class="label" for="name">Username</label>
 			      			<input type="text" class="form-control" placeholder="Username" name="username">
@@ -52,26 +106,23 @@
 
 							<div class="form-group mb-3">
 			      			<label class="label" for="nama">Nama</label>
-			      			<input type="text" class="form-control" placeholder="Nama" name="nama" required>
+			      			<input type="text" class="form-control" placeholder="Nama" name="nama">
 			      			</div>
 
 							<div class="form-group mb-3">
 		            			<label class="label" for="email">Email</label>
-		              			<input type="email" class="form-control" placeholder="Email" name="email" required>
+		              			<input type="email" class="form-control" placeholder="Email" name="email">
 		            		</div>
 
 		            		<div class="form-group mb-3">
 		            			<label class="label" for="password">Password</label>
-		              			<input type="password" class="form-control" placeholder="Password" name="password" required>
+		              			<input type="password" class="form-control" placeholder="Password" name="password">
 		            		</div>
 
 							<div class="form-group mb-3">
-								<label class="label" for="level">Level</label>
-								<select class="form-select" name="level" aria-label="Disabled select example">
-								<option value="1">Supplier</option>
-								<option value="2">Member</option>
-								</select>
-			      			</div>
+		            			<label class="label" for="password">Confirm Password</label>
+		              			<input type="password" class="form-control" placeholder="Confirm Password" name="cpassword">
+		            		</div>
 
 							<div class="w-100">
 			            		<label class="checkbox-wrap checkbox-primary mb-0">I agree all statements in Terms of service
@@ -81,10 +132,8 @@
 							</div>
 							<br>
 		            		<div class="form-group">
-		            			<button type="submit" class="form-control btn btn-primary submit px-3">Sign Up</button>
+		            			<button type="submit" name="submit" class="form-control btn btn-primary submit px-3">Sign Up</button>
 		            		</div>
-		            		
-		            			
 		            		
 		          		</form>
 		        		</div>
@@ -102,4 +151,3 @@
 
 	</body>
 </html>
-

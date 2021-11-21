@@ -26,10 +26,10 @@
 							<div class="text w-100">
 								<h2>Selamat datang</h2>
 								<p>Belum punya <b style="color: #ff6a3d;">akun?</b></p>
-								<a href="register.html" class="btn btn-white btn-outline-white">Sign Up</a>
+								<a href="register.php" class="btn btn-white btn-outline-white">Sign Up</a>
 							</div>
 			      		</div>
-						  
+
 						<div class="login-wrap p-4 p-lg-5">
 			      		<div class="d-flex">
 			      			<div class="w-100">

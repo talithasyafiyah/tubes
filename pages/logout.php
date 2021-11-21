@@ -6,6 +6,6 @@ unset($_SESSION['nama']);
 unset($_SESSION['level']);
 
 session_destroy();
-echo "<script>alert('Anda telah keluar dari dashboard');document.location='login.php'</script>"
+echo "<script>alert('Anda telah keluar dari dashboard.');document.location='login.php'</script>"
 
 ?>
