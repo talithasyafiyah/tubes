@@ -122,7 +122,7 @@
                      </div>
                      <!-- row -->
                      <div class="row column1">
-                        <div class="col-md-6">
+                        <div class="col-lg-12">
                            <div class="white_shd full margin_bottom_30">
                               <div class="full graph_head">
                                  <div class="heading1 margin_0">
@@ -131,79 +131,57 @@
                               </div>
                               <div class="table_section padding_infor_info">
                                  <div class="table-responsive-sm">
-                                    <table class="table">
+                                    <table class="table" style="vertical-align: center;">
                                        <thead>
                                           <tr>
-                                             <th>Firstname</th>
-                                             <th>Lastname</th>
-                                             <th>Email</th>
+                                             <th>ID</th>
+                                             <th>Date/Time</th>
+                                             <th>Reference No.</th>
+                                             <th>Pickers</th>
+                                             <th>Remarks</th>
+                                             <th></th>
                                           </tr>
                                        </thead>
                                        <tbody>
                                           <tr>
-                                             <td>John</td>
-                                             <td>Doe</td>
-                                             <td>john@example.com</td>
+                                             <td class="text-center">1</td>
+                                             <td class="text-center">2021-10-12 17:13:41</td>
+                                             <td class="text-center">809967896541</td>
+                                             <td class="text-center">TRACY MILKY</td>
+                                             <td class="text-center">Quick Sender.co</td>
+                                             <td class="text-center"><a href="#" class="btn btn-outline-info d-flex justify-content-center w-auto"><i class="fa fa-folder-open-o fa-lg"></i></a></td>
                                           </tr>
                                           <tr>
-                                             <td>Mary</td>
-                                             <td>Moe</td>
-                                             <td>mary@example.com</td>
+                                             <td class="text-center">2</td>
+                                             <td class="text-center">2021-10-12 17:13:41</td>
+                                             <td class="text-center">809967896541</td>
+                                             <td class="text-center">TRACY MILKY</td>
+                                             <td class="text-center">Quick Sender.co</td>
+                                             <td class="text-center"><a href="#" class="btn btn-outline-info d-flex justify-content-center w-auto"><i class="fa fa-folder-open-o fa-lg"></i></a></td>
                                           </tr>
                                           <tr>
-                                             <td>July</td>
-                                             <td>Dooley</td>
-                                             <td>july@example.com</td>
+                                             <td class="text-center">3</td>
+                                             <td class="text-center">2021-10-12 17:13:41</td>
+                                             <td class="text-center">809967896541</td>
+                                             <td class="text-center">TRACY MILKY</td>
+                                             <td class="text-center">Quick Sender.co</td>
+                                             <td class="text-center"><a href="#" class="btn btn-outline-info d-flex justify-content-center w-auto"><i class="fa fa-folder-open-o fa-lg"></i></a></td>
                                           </tr>
                                           <tr>
-                                             <td>Mary</td>
-                                             <td>Moe</td>
-                                             <td>mary@example.com</td>
-                                          </tr>
-                                       </tbody>
-                                    </table>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <!-- row 2 -->
-                        <div class="col-md-6">
-                           <div class="white_shd full margin_bottom_30">
-                              <div class="full graph_head">
-                                 <div class="heading1 margin_0">
-                                    <h2>Basic Table</h2>
-                                 </div>
-                              </div>
-                              <div class="table_section padding_infor_info">
-                                 <div class="table-responsive-sm">
-                                    <table class="table">
-                                       <thead>
-                                          <tr>
-                                             <th>Firstname</th>
-                                             <th>Lastname</th>
-                                             <th>Email</th>
-                                          </tr>
-                                       </thead>
-                                       <tbody>
-                                          <tr>
-                                             <td>John</td>
-                                             <td>Doe</td>
-                                             <td>john@example.com</td>
+                                             <td class="text-center">4</td>
+                                             <td class="text-center">2021-10-12 17:13:41</td>
+                                             <td class="text-center">809967896541</td>
+                                             <td class="text-center">TRACY MILKY</td>
+                                             <td class="text-center">Quick Sender.co</td>
+                                             <td class="text-center"><a href="#" class="btn btn-outline-info d-flex justify-content-center w-auto"><i class="fa fa-folder-open-o fa-lg"></i></a></td>
                                           </tr>
                                           <tr>
-                                             <td>Mary</td>
-                                             <td>Moe</td>
-                                             <td>mary@example.com</td>
-                                          </tr>
-                                          <tr>
-                                             <td>July</td>
-                                             <td>Dooley</td>
-                                             <td>july@example.com</td>
-                                          </tr>
-                                          <tr>
-                                             <td>Mary</td>
-                                             <td>Moe</td>
-                                             <td>mary@example.com</td>
+                                             <td class="text-center">5</td>
+                                             <td class="text-center">2021-10-12 17:13:41</td>
+                                             <td class="text-center">809967896541</td>
+                                             <td class="text-center">TRACY MILKY</td>
+                                             <td class="text-center">Quick Sender.co</td>
+                                             <td class="text-center"><a href="#" class="btn btn-outline-info d-flex justify-content-center w-auto"><i class="fa fa-folder-open-o fa-lg"></i></a></td>
                                           </tr>
                                        </tbody>
                                     </table>
