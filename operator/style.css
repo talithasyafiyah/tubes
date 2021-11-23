@@ -301,7 +301,7 @@ a.btn {
 
 .padding_infor_info {
     padding: 35px 35px;
-    float: left;
+    float: right;
     width: 100%;
 }
 
@@ -3246,11 +3246,6 @@ table.projects tr td:first-child {
 .table.projects tbody td {
     padding: 15px 15px;
 }
-
-.table-responsive-sm {
-    overflow: auto;
-}
-
 
 /*------------------------------------------------------------------
     25. Login Section

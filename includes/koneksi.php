@@ -1,9 +1,5 @@
 <?php
 
-    if(!isset($_SESSION)) {
-        session_start();
-    }
-    
     $host = 'localhost';
     $user = 'root';
     $pass = '';
@@ -15,6 +11,5 @@
     die ("Koneksi dengan database gagal: ".mysqli_connect_errno().
          " - ".mysqli_connect_error());
      }
-
 
 ?>
