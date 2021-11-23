@@ -44,16 +44,14 @@ $password = $_POST['password'];
                     header("location:../visitor/dashboardvis.php");
                     
                 } else {
-                    echo "gagal";
+                    header("location:login.php?pesan=gagal");
                 }
             
             } else {
-                header("location:login.php");
-                echo 'gagal';
+                header("location:login.php?pesan=gagal");
             }
         } else {
-            header("location:login.php");
-            echo 'gagal';
+            header("location:login.php?pesan=gagal");
         }
     }
 }
