@@ -24,6 +24,7 @@
 					<div class="wrap d-md-flex">
 						<div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
 							<div class="text w-100">
+								<img src="images/logo.png" width="130">
 								<h2>Selamat datang</h2>
 								<p>Belum punya <b style="color: #ff6a3d;">akun?</b></p>
 								<a href="register.php" class="btn btn-white btn-outline-white">Sign Up</a>

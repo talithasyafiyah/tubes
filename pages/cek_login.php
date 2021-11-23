@@ -26,22 +26,22 @@ $password = $_POST['password'];
                 if($cekuser == "Operator") {
                     $_SESSION['username'] = $username;
                     $_SESSION['level'] = "Operator";
-                    header("location:home_operator.php");
+                    header("location:../operator/dashboardop.php");
 
                 } elseif ($cekuser == "Admin") {
                     $_SESSION['username'] = $username;
                     $_SESSION['level'] = "Admin";
-                    header("location:home_admin.php");
+                    header("location:../admin/dashboardadm.php");
 
                 } elseif ($cekuser == "Manager") {
                     $_SESSION['username'] = $username;
                     $_SESSION['level'] = "Manager";
-                    header("location:home_manager.php");
+                    header("location:../manager/dashboardman.php");
 
-                } elseif ($cekuser == "Pengunjung") {
+                } elseif ($cekuser == "Visitor") {
                     $_SESSION['username'] = $username;
-                    $_SESSION['level'] = "Pengunjung";
-                    header("location:home_pengunjung.php");
+                    $_SESSION['level'] = "Visitor";
+                    header("location:../visitor/dashboardvis.php");
                     
                 } else {
                     echo "gagal";
