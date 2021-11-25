@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Outgoing Product</title>
+      <title>Pluto - Responsive Bootstrap Admin Panel Templates</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -32,7 +32,7 @@
       <!-- custom css -->
       <link rel="stylesheet" href="css/custom.css" />
       <!-- calendar file css -->
-      <link rel="stylesheet" href="css/semantic.min.css" />
+      <link rel="stylesheet" href="js/semantic.min.css" />
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -92,7 +92,7 @@
                 <div class="topbar">
                    <nav class="navbar navbar-expand-lg navbar-light">
                       <div class="full">
-                         <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="height:61px"><i class="fa fa-bars"></i></button>
+                         <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
                          <div class="logo_section">
                             <a href="operator.html"><img class="img-responsive" style="width: auto;" src="images/logo/UD. SATU 7AN.png" alt="#" /></a>
                          </div>
@@ -126,7 +126,8 @@
                      <div class="row column_title">
                         <div class="col-md-12">
                            <div class="page_title">
-                              <h2>Outgoing Product</h2>
+                              <h2>Data <small><i class="fa fa-angle-double-right"></i> Barang <i class="fa fa-angle-double-right"></i>
+		                        <a type="button" class="btn btn-outline-warning btn-sm"  href="insertmdp.php"><i class="fa fa-plus-circle orange_color"></i> Add Barang </a></small>
                            </div>
                         </div>
                      </div>
@@ -136,7 +137,7 @@
                            <div class="white_shd full margin_bottom_30">
                               <div class="full graph_head">
                                  <div class="heading1 margin_0">
-                                    <h2>Basic Table</h2>
+                                    <h2>Master Data Product</h2>
                                  </div>
                               </div>
                                  <div class="table_section padding_infor_info">
@@ -145,11 +146,12 @@
                                     <table class="table" id="dataTable">
                                        <thead >
                                           <tr>
-                                             <th class="text-left align-left font-weight-bold">ID_Keluar</th>
-                                             <th class="text-left align-left font-weight-bold">ID_Barang</th>
-                                             <th class="text-left align-left font-weight-bold">Tanggal</th>
-                                             <th class="text-left align-left font-weight-bold">Keterangan</th>
-                                             <th class="text-left align-left font-weight-bold">Quantity</th>
+                                             <th class="text-left align-left font-weight-bold">No.</th>
+                                             <th class="text-left align-left font-weight-bold">ID Barang</th>
+                                             <th class="text-left align-left font-weight-bold">Description</th>
+                                             <th class="text-left align-left font-weight-bold">Company</th>
+                                             <th class="text-left align-left font-weight-bold">Stock</th>
+                                             <th class="text-left align-left font-weight-bold">Price</th>
                                              <th class="text-left align-left font-weight-bold" data-orderable="false">Action</th>
                                           </tr>
                                        </thead>
@@ -158,7 +160,7 @@
 
                                           require_once'../includes/koneksi.php';
 
-                                          $SQL = "SELECT * FROM out_product";
+                                          $SQL = "SELECT * FROM mdpop";
                                           $SQL_QUERY = mysqli_query($koneksi, $SQL);
 
                                           if ($SQL_QUERY-> num_rows >0)
@@ -166,14 +168,21 @@
                                              while ($ROW = $SQL_QUERY-> fetch_assoc())
                                              {
                                                 echo "<tr>
-                                                         <td class='text-left align-left'>". $ROW['id_keluar'] ."</td> 
+                                                         <td class='text-left align-left'>". $ROW['no'] ."</td> 
                                                          <td class='text-left align-left'>". $ROW['id_barang'] ."</td> 
-                                                         <td class='text-left align-left'>". $ROW['tanggal'] ."</td> 
-                                                         <td class='text-left align-left'>". $ROW['keterangan'] ."</td> 
-                                                         <td class='text-left align-left'>". $ROW['quantity'] ."</td> 
-                                                         <td class='text-left align-left'> 
+                                                         <td class='text-left align-left'>". $ROW['description'] ."</td> 
+                                                         <td class='text-left align-left'>". $ROW['company'] ."</td> 
+                                                         <td class='text-left align-left'>". $ROW['stock'] ."</td>
+                                                         <td class='text-left align-left'>". $ROW['price'] ."</td>  
+                                                         <td class='text-center align-center'> 
                                                             <a href='#' class='btn btn-outline-info d-inline-block justify-content-center'>
                                                                <i class='fa fa-folder-open-o fa-lg'></i>
+                                                            </a>
+                                                            <a href='#' class='btn btn-outline-success d-inline-block justify-content-center'>
+                                                               <i class='fa fa-pencil fa-lg'></i>
+                                                            </a>
+                                                            <a href='#' class='btn btn-outline-danger d-inline-block justify-content-center'>
+                                                               <i class='fa fa-trash-o fa-lg'></i>
                                                             </a>
                                                          </td>
                                                       </tr>";
@@ -226,7 +235,7 @@
       </script>
       <!-- custom js -->
       <script src="js/custom.js"></script>
-      <!-- calendar file js -->     
+      <!-- calendar file css -->     
       <script src="js/semantic.min.js"></script>
       <!-- datatables file js -->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>

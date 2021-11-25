@@ -75,7 +75,14 @@ session_start();
                      <li><a href="mdpop.html"><i class="fa fa-desktop orange_color2"></i> <span>Master Data Product</span></a></li>
                      <li><a href="in.html"><i class="fa fa-shopping-cart blue1_color"></i> <span>Incoming Product</span></a></li>
                      <li><a href="out.html"><i class="fa fa-truck red_color"></i> <span>Outgoing Product</span></a></li>
-                     <li><a href="reportop.html"><i class="fa fa-print green_color"></i> <span>Report</span></a></li>
+                     <li>
+                        <a href="#report" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-print green_color"></i> <span>Report</span></a>
+                        <ul class="collapse list-unstyled" id="report">
+                           <li><a href="reportmdp.html">> <span>Master Data Product</span></a></li>
+                           <li><a href="reportin.html">> <span>Incoming Product</span></a></li>
+                           <li><a href="reportout.html">> <span>Outgoing Product</span></a></li>
+                        </ul>
+                     </li>
                   </ul>
                </div>
             </nav>
