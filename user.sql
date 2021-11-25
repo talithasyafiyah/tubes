@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2021 at 01:39 PM
+-- Generation Time: Nov 23, 2021 at 04:43 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -33,7 +33,7 @@ CREATE TABLE `user` (
   `nama` varchar(30) CHARACTER SET utf8 NOT NULL,
   `email` varchar(30) CHARACTER SET utf8 NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `level` enum('Supplier','Member','Admin') CHARACTER SET utf8 NOT NULL
+  `level` enum('Admin','Operator','Manager','Visitor') CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -41,11 +41,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `nama`, `email`, `password`, `level`) VALUES
-(1, 'talitha12', 'Talitha Syafiyah', 'talithasyafiyah1112@gmail.com', '13d959e28d3efb8612ab9c1796860988', 'Admin'),
-(2, 'iwan123', 'budi', 'budiiii@gmail.com', 'b804c7dac0a3f6f62f659333223561d5', 'Supplier'),
-(3, 'donny24', 'Donny Adithya', 'donnyadithya@gmail.com', 'c0f59329c17cd1965d0de0735507b979', 'Member'),
-(4, 'caestomarco', 'Caesto marco', 'caesto@gmail.com', '15f6283821263a62b10506a7d015462a', 'Member'),
-(6, 'farid', 'muhammad farid', 'farid@gmail.com', 'a1d12da42d4302e53d510954344ad164', 'Supplier');
+(32, 'talitha', 'Talitha Syafiyah', 'talithasyafiyah@gmail.com', '$2y$10$Y8mVjvlqx4ZtSwvSQJdYYOPsj14wl0tQgMMqubVFMlRXfyyl.2IU6', 'Admin'),
+(33, 'erli', 'Erli Gurning', 'erli@gmail.com', '$2y$10$AYlGupfMVm1GatqacwufiOhvo9aQZKft4BhOhS/5AVaaUmpsAWoG2', 'Operator'),
+(34, 'donny', 'Donny Adithya', 'donny@gmail.com', '$2y$10$TpOlzXKl0Hm56mzNNn2XG.hsnc4nFoAOTrmssrBGShFuaoKJr7BvO', 'Manager'),
+(41, 'caesto', 'Caesto Marco', 'caesto@gmail.com', '$2y$10$CQGF7m1Ap7MYsSau2HtDcuf9.CW1LBzkJFDdWMW4b0Mc2mkO25PQ.', 'Visitor');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +64,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

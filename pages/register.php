@@ -26,7 +26,7 @@
 		} elseif ($usernamecheck > 0) {
 			header("location:register.php?pesan=check");
 		} else {
-			$sql = "INSERT INTO user (username,nama,email,password,level) VALUES ('$username','$nama','$email','$password','Pengunjung')";
+			$sql = "INSERT INTO user (username,nama,email,password,level) VALUES ('$username','$nama','$email','$password','Visitor')";
 																			
 			if($koneksi->query($sql)===TRUE){
 				header("location:selamat.php");
@@ -74,6 +74,7 @@
 					<div class="wrap d-md-flex">
 						<div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
 							<div class="text w-100">
+								<img src="images/logo.png" width="150">
 								<h2>Selamat datang</h2>
 								<p>Sudah punya <b style="color: #ff6a3d;">akun?</b></p>
 								<a href="login.php" class="btn btn-white btn-outline-white">Sign In</a>
