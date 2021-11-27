@@ -15,7 +15,7 @@
       <!-- site icon -->
       <link rel="icon" href="../../operator/images/logo/LOGO 1.9.png" type="image/png" />
       <!-- font-awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+      <link rel="stylesheet" href="../../operator/css/all.css" />
       <!-- bootstrap css -->
       <link rel="stylesheet" href="../../operator/css/bootstrap.min.css" />
       <!-- CSS only -->
@@ -43,7 +43,8 @@
    <body class="inner_page contact_page">
       <div class="full_container">
          <div class="inner_container">
-            <!-- Sidebar  -->
+
+            <!-- SIDEBAR  -->
             <nav id="sidebar">
                 <div class="sidebar_blog_1">
                    <div class="sidebar-header">
@@ -80,27 +81,27 @@
                    </ul>
                 </div>
              </nav>
-             <!-- end sidebar -->
-             <!-- right content -->
+             <!-- END OF SIDEBAR -->
+
+             <!-- HEADER -->
              <div id="content">
-                <!-- topbar -->
                 <div class="topbar">
                    <nav class="navbar navbar-expand-lg navbar-light">
                       <div class="full">
-                         <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="height:61px"><i class="fa fa-bars"></i></button>
+                         <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="height:69.8px"><i class="fa fa-bars"></i></button>
                          <div class="logo_section">
                             <a href="operator.html"><img class="img-responsive" style="width: auto;" src="../../operator/images/logo/UD. SATU 7AN.png" alt="#" /></a>
                          </div>
                          <div class="right_topbar">
                             <div class="icon_info">
                                <ul>
-                                  <li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">2</span></a></li>
+                                  <li><a href="#"><i class="fa fa-bell"></i><span class="badge">2</span></a></li>
                                   <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
-                                  <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a></li>
+                                  <li><a href="#"><i class="fa fa-envelope"></i><span class="badge">3</span></a></li>
                                </ul>
                                <ul class="user_profile_dd">
                                   <li>
-                                     <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="../../operator/images/logo/donii.jpeg" alt="#" /><span class="name_user">Donny Adithya</span></a>
+                                     <a class="btn dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="../../operator/images/logo/donii.jpeg" alt="#" /><span class="name_user">Donny Adithya</span></a>
                                      <div class="dropdown-menu">
                                         <a class="dropdown-item" href="profileop.html">My Profile</a>
                                         <a class="dropdown-item" href="settingsop.html">Settings</a>
@@ -114,4 +115,4 @@
                       </div>
                    </nav>
                 </div>
-               <!-- end topbar -->
+               <!-- END OF HEADER -->

@@ -1,73 +1,96 @@
-<?php require_once('header.php'); ?>
-               <!-- end of header -->
+<?php 
+
+   require_once('header.php'); 
+
+?>
+               <!-- END OF HEADER -->
+
+               <!-- CONTENT -->
                <div class="midde_cont">
                   <div class="container-fluid">
                      <div class="row column_title">
                         <div class="col-md-12">
                            <div class="page_title">
-                              <h2>Outgoing Product</h2>
+                              <h2>
+                                 <i class="fas fa-truck fa-sm"></i> Outgoing Product &nbsp;&nbsp
+                                 <small><i class="fas fa-angle-double-right fa-xs"></i></small> 
+                                 &nbsp;&nbsp
+                                 <a href="add-issuing.php" class="btn btn-outline-success py-2 px-2 rounded">
+                                    <i class="fas fa-plus-square fa-lg"></i> 
+                                    <span >&nbsp Add Issuing</span>
+                                 </a>
+                              </h2>
                            </div>
                         </div>
                      </div>
-                     <!-- row -->
                      <div class="row column1">
                         <div class="col-lg-12">
                            <div class="white_shd full margin_bottom_30">
                               <div class="full graph_head">
                                  <div class="heading1 margin_0">
-                                    <h2>Basic Table</h2>
+                                    <h2>Result</h2>
                                  </div>
                               </div>
                                  <div class="table_section padding_infor_info">
                                     <div class="table">
-                                    
-                                    <table class="table" id="dataTable">
-                                       <thead >
-                                          <tr>
-                                             <th class="text-left align-left font-weight-bold">ID_Keluar</th>
-                                             <th class="text-left align-left font-weight-bold">ID_Barang</th>
-                                             <th class="text-left align-left font-weight-bold">Tanggal</th>
-                                             <th class="text-left align-left font-weight-bold">Keterangan</th>
-                                             <th class="text-left align-left font-weight-bold">Quantity</th>
-                                             <th class="text-left align-left font-weight-bold" data-orderable="false">Action</th>
-                                          </tr>
-                                       </thead>
-                                       <tbody>
-                                       <?php
+                                       <table class="table table-striped table-bordered table-hover" id="dataTable">
+                                          <thead class="thead-dark">
+                                             <tr>
+                                                <th class="text-left align-middle font-weight-bold">No.</th>
+                                                <th class="text-left align-middle font-weight-bold">Tanggal</th>
+                                                <th class="text-left align-middle font-weight-bold">No. Referensi</th>
+                                                <th class="text-left align-middle font-weight-bold">Customer</th>
+                                                <th class="text-left align-middle font-weight-bold">Items Qty</th>
+                                                <th class="text-left align-middle font-weight-bold">Misc</th>
+                                                <th class="text-center align-center font-weight-bold" data-orderable="false">Details</th>
+                                             </tr>
+                                          </thead>
+                                          <tbody>
+                                          <?php
 
-                                          require_once '../../includes/koneksi.php';
+                                             require_once '../../includes/koneksi.php';
 
-                                          $SQL = "SELECT * FROM out_product";
-                                          $SQL_QUERY = mysqli_query($koneksi, $SQL);
+                                             $SQL = "SELECT * FROM out_product";
+                                             $SQL_QUERY = mysqli_query($koneksi, $SQL);
 
-                                          if ($SQL_QUERY-> num_rows >0)
-                                          {
-                                             while ($ROW = $SQL_QUERY-> fetch_assoc())
+                                             if ($SQL_QUERY -> num_rows >0)
                                              {
-                                                echo "<tr>
-                                                         <td class='text-left align-left'>". $ROW['id_keluar'] ."</td> 
-                                                         <td class='text-left align-left'>". $ROW['id_barang'] ."</td> 
-                                                         <td class='text-left align-left'>". $ROW['tanggal'] ."</td> 
-                                                         <td class='text-left align-left'>". $ROW['keterangan'] ."</td> 
-                                                         <td class='text-left align-left'>". $ROW['quantity'] ."</td> 
-                                                         <td class='text-left align-left'> 
-                                                            <a href='#' class='btn btn-outline-info d-inline-block justify-content-center'>
-                                                               <i class='fa fa-folder-open fa-lg'></i>
-                                                            </a>
-                                                         </td>
-                                                      </tr>";
+                                                while ($ROW = $SQL_QUERY -> fetch_assoc())
+                                                {
+                                                   echo "<tr>
+                                                            <form method='GET' action='issuing-details.php?id=$ROW[no]'>
+                                                               <td class='text-left align-middle'>". $ROW['no'] ."</td> 
+                                                               <td class='text-left align-middle'>". $ROW['tanggal'] ."</td> 
+                                                               <td class='text-left align-middle'>". $ROW['ref_no'] ."</td> 
+                                                               <td class='text-left align-middle'>". $ROW['customer'] ."</td> 
+                                                               <td class='text-left align-middle'>". $ROW['items_qty'] ."</td> 
+                                                               <td class='text-left align-middle'>". $ROW['misc'] ."</td>
+                                                               <td class='text-center align-center'>
+                                                                  <input type='hidden' name='id' value=" . $ROW['no'] . "> 
+                                                                  <button title='Details' class='btn btn-outline-info d-inline-block justify-content-center'>
+                                                                     <i class='fad fa-folder-open green2_color fa-lg'></i>
+                                                                  </button>
+                                                            </form
+                                                               </td>
+                                                         </tr>";
+                                                }
                                              }
-                                             echo "</table>";
-                                          }
 
-                                       ?>
-                                       </tbody>
-                                    </table>
+                                          ?>
+                                          </tbody>
+                                       </table>
+                                    </div>
                                  </div>
-                              </div>
                            </div>
                         </div>
-                        <!-- end row -->
                      </div>
-                     <!-- footer -->
-<?php require_once('footer.php'); ?>
+                     <!-- END OF CONTENT -->
+
+                  <!-- FOOTER -->
+                  <?php require_once('footer.php'); ?>
+                  <script>
+                     $(document).ready(function() 
+                     {
+                        $('#dataTable').DataTable();
+                     });
+                  </script>
