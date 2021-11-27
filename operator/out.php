@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Pluto - Responsive Bootstrap Admin Panel Templates</title>
+      <title>Outgoing Product</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -16,6 +16,9 @@
       <link rel="icon" href="images/fevicon.png" type="image/png" />
       <!-- bootstrap css -->
       <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <!-- CSS only -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet" >
+      <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet" >
       <!-- site css -->
       <link rel="stylesheet" href="style.css" />
       <!-- responsive css -->
@@ -29,7 +32,7 @@
       <!-- custom css -->
       <link rel="stylesheet" href="css/custom.css" />
       <!-- calendar file css -->
-      <link rel="stylesheet" href="js/semantic.min.css" />
+      <link rel="stylesheet" href="css/semantic.min.css" />
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -89,7 +92,7 @@
                 <div class="topbar">
                    <nav class="navbar navbar-expand-lg navbar-light">
                       <div class="full">
-                         <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                         <button type="button" id="sidebarCollapse" class="sidebar_toggle" style="height:61px"><i class="fa fa-bars"></i></button>
                          <div class="logo_section">
                             <a href="operator.html"><img class="img-responsive" style="width: auto;" src="images/logo/UD. SATU 7AN.png" alt="#" /></a>
                          </div>
@@ -123,51 +126,62 @@
                      <div class="row column_title">
                         <div class="col-md-12">
                            <div class="page_title">
-                              <h2>Brand Product</h2>
+                              <h2>Outgoing Product</h2>
                            </div>
                         </div>
                      </div>
                      <!-- row -->
                      <div class="row column1">
-                        <div class="col-md-12">
+                        <div class="col-lg-12">
                            <div class="white_shd full margin_bottom_30">
                               <div class="full graph_head">
                                  <div class="heading1 margin_0">
-                                    <h2>Brand Product</h2>
+                                    <h2>Basic Table</h2>
                                  </div>
                               </div>
-                              <div class="table_section padding_infor_info">
-                                 <div class="table-responsive-sm">
-                                    <table class="table">
-                                       <thead>
+                                 <div class="table_section padding_infor_info">
+                                    <div class="table">
+                                    
+                                    <table class="table" id="dataTable">
+                                       <thead >
                                           <tr>
-                                             <th>#</th>
-                                             <th>Firstname</th>
-                                             <th>Lastname</th>
-                                             <th>Age</th>
-                                             <th>City</th>
-                                             <th>Country</th>
-                                             <th>Sex</th>
-                                             <th>Example</th>
-                                             <th>Example</th>
-                                             <th>Example</th>
-                                             <th>Example</th>
+                                             <th class="text-left align-left font-weight-bold">ID_Keluar</th>
+                                             <th class="text-left align-left font-weight-bold">ID_Barang</th>
+                                             <th class="text-left align-left font-weight-bold">Tanggal</th>
+                                             <th class="text-left align-left font-weight-bold">Keterangan</th>
+                                             <th class="text-left align-left font-weight-bold">Quantity</th>
+                                             <th class="text-left align-left font-weight-bold" data-orderable="false">Action</th>
                                           </tr>
                                        </thead>
                                        <tbody>
-                                          <tr>
-                                             <td>1</td>
-                                             <td>Anna</td>
-                                             <td>Pitt</td>
-                                             <td>35</td>
-                                             <td>New York</td>
-                                             <td>USA</td>
-                                             <td>Female</td>
-                                             <td>Yes</td>
-                                             <td>Yes</td>
-                                             <td>Yes</td>
-                                             <td>Yes</td>
-                                          </tr>
+                                       <?php
+
+                                          require_once'../includes/koneksi.php';
+
+                                          $SQL = "SELECT * FROM out_product";
+                                          $SQL_QUERY = mysqli_query($koneksi, $SQL);
+
+                                          if ($SQL_QUERY-> num_rows >0)
+                                          {
+                                             while ($ROW = $SQL_QUERY-> fetch_assoc())
+                                             {
+                                                echo "<tr>
+                                                         <td class='text-left align-left'>". $ROW['id_keluar'] ."</td> 
+                                                         <td class='text-left align-left'>". $ROW['id_barang'] ."</td> 
+                                                         <td class='text-left align-left'>". $ROW['tanggal'] ."</td> 
+                                                         <td class='text-left align-left'>". $ROW['keterangan'] ."</td> 
+                                                         <td class='text-left align-left'>". $ROW['quantity'] ."</td> 
+                                                         <td class='text-left align-left'> 
+                                                            <a href='#' class='btn btn-outline-info d-inline-block justify-content-center'>
+                                                               <i class='fa fa-folder-open-o fa-lg'></i>
+                                                            </a>
+                                                         </td>
+                                                      </tr>";
+                                             }
+                                             echo "</table>";
+                                          }
+
+                                       ?>
                                        </tbody>
                                     </table>
                                  </div>
@@ -212,8 +226,17 @@
       </script>
       <!-- custom js -->
       <script src="js/custom.js"></script>
-      <!-- calendar file css -->     
+      <!-- calendar file js -->     
       <script src="js/semantic.min.js"></script>
-      <script></script>
+      <!-- datatables file js -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+      <script>
+         $(document).ready(function() 
+         {
+            $('#dataTable').DataTable();
+         });
+      </script>
    </body>
 </html>
