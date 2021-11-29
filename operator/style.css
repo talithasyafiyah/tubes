@@ -84,6 +84,7 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: normal;
     font-weight: 300;
+    overflow-x: hidden !important;
 }
 
 body.demos .section {
@@ -549,10 +550,6 @@ a:focus {
     color: #009688 !important;
 }
 
-.green2_color {
-    color: #000000 !important;
-}
-
 .green_bg {
     background: #009688 !important;
 }
@@ -696,6 +693,19 @@ a:focus {
     font-weight: 500;
     color: #fff;
     padding: 0 35px 0 10px;
+}
+
+.icon_info ul.user_profile_dd li>a::after {
+    color: #fff;
+    top: 13px;
+    right: 28px;
+    display: block;
+    position: absolute;
+    transform: translateY(-50%);
+    content: "\f107";
+    font-family: 'fontawesome';
+    border: none;
+    font-size: 18px;
 }
 
 .icon_info ul.user_profile_dd {
@@ -2935,8 +2945,8 @@ ul.inbox-pagination li {
 
 .table-hover tbody tr:hover,
 .table-hover tbody tr:focus {
-    background-color: #AEAEAE !important;
-    color: #000;
+    background-color: #1ed085 !important;
+    color: #fff;
 }
 
 .view-message.inbox-small-cells i {
