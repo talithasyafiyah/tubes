@@ -218,8 +218,8 @@
 
                                                         $sql = "INSERT INTO mdpop (id_barang, description, company, stock, price) VALUES ('$id_barang','$description','$company','$stock','$price')";
 																			
-			                                            if($koneksi->query($sql)===TRUE>0){
-				                                        header("location:mdpop.php");
+			                                            if($koneksi->query($sql)===TRUE){
+                                                        echo "<script>setTimeout(\"location.href = 'mdpop.php';\",1500);</script>";
 			                                            } else {
 				                                        echo "Terjadi kesalahan:".$sql."<br/>".$koneksi->error;
 			                                            }
