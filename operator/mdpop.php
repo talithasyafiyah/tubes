@@ -162,13 +162,14 @@
 
                                          $SQL = "SELECT * FROM mdpop";
                                          $SQL_QUERY = mysqli_query($koneksi, $SQL);
+                                         $no = 1;
 
                                          if ($SQL_QUERY-> num_rows >0)
                                          {
                                             while ($ROW = $SQL_QUERY-> fetch_assoc())
                                             {
                                                echo "<tr>
-                                                        <td class='text-left align-left'>". $ROW['no'] ."</td> 
+                                                        <td class='text-left align-left'>". $no++ ."</td> 
                                                         <td class='text-left align-left'>". $ROW['id_barang'] ."</td> 
                                                         <td class='text-left align-left'>". $ROW['description'] ."</td> 
                                                         <td class='text-left align-left'>". $ROW['company'] ."</td> 

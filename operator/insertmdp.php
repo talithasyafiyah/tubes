@@ -34,14 +34,14 @@
       <!-- calendar file css -->
       <link rel="stylesheet" href="js/semantic.min.css" />
       <!-- Google font -->
-	   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-	   <!-- Bootstrap -->
-	   <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
-	   <!-- Custom stlylesheet -->
-	   <link type="text/css" rel="stylesheet" href="css/style.css" />
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
+      <!-- Bootstrap -->
+      <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+      <!-- Custom stlylesheet -->
+      <link type="text/css" rel="stylesheet" href="css/insert.css" />
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
@@ -139,115 +139,102 @@
                        <div class="col-md-12">
                           <div class="page_title">
                              <h2>Data <small><i class="fa fa-angle-double-right"></i> Barang <i class="fa fa-angle-double-right"></i>
-                             <a type="button" class="btn btn-outline-warning btn-sm"  href="insertmdp.php"><i class="fa fa-plus-circle orange_color"></i> Add Barang </a></small>
+                             Insert</small>
                           </div>
                        </div>
                     </div>
                     <!-- row -->
-                    <div id="booking" class="section">
-                        <div class="section-center">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="booking-form">
-                                        <div class="form-header">
-                                            <h1>Book a car</h1>
-                                        </div>
-                                        <form>
-                                            <div class="row">
-                                                <div class="col-sm-6">
+                    <div class="row column1">
+                       <div class="col-lg-12">
+                          <div class="white_shd full margin_bottom_30">
+                             <div class="full graph_head">
+                                <div class="heading1 margin_0">
+                                   <h2>Master Data Product</h2>
+                                </div>
+                             </div>
+                             <div class="contain">
+                                <div class="section-center">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="booking-form">
+                                                <form method="POST">
                                                     <div class="form-group">
-                                                        <span class="form-label">Name</span>
-                                                        <input class="form-control" type="text" placeholder="Enter your name">
+                                                        <span class="form-label">ID Barang</span>
+                                                        <input class="form-control" name="id" type="number" placeholder="Masukkann ID Barang" required="">
                                                     </div>
-                                                </div>
-                                                <div class="col-sm-6">
                                                     <div class="form-group">
-                                                        <span class="form-label">Email</span>
-                                                        <input class="form-control" type="email" placeholder="Enter your email">
+                                                        <span class="form-label">Description</span>
+                                                        <input class="form-control" name="desc" type="text" placeholder="Masukkan Deskripsi Barang" required="">
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <span class="form-label">Phone</span>
-                                                <input class="form-control" type="tel" placeholder="Enter your phone number">
-                                            </div>
-                                            <div class="form-group">
-                                                <span class="form-label">Pickup Location</span>
-                                                <input class="form-control" type="text" placeholder="Enter ZIP/Location">
-                                            </div>
-                                            <div class="form-group">
-                                                <span class="form-label">Destination</span>
-                                                <input class="form-control" type="text" placeholder="Enter ZIP/Location">
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-5">
                                                     <div class="form-group">
-                                                        <span class="form-label">Pickup Date</span>
-                                                        <input class="form-control" type="date" required>
+                                                        <span class="form-label">Company</span>
+                                                        <select class="form-control" name="company" required="" >
+                                                            <option>PT. BOGASARI</option>
+                                                            <option>PT. SAMPOERNA</option>
+                                                            <option>PT. INDOFOOD</option>
+                                                            <option>PT. WINGSFOOD</option>
+                                                            <option>PT. NUTRIFOOD</option>
+                                                        </select>
+                                                        <span class="select-arrow"></span>
                                                     </div>
-                                                </div>
-                                                <div class="col-sm-7">
+                                                    <div class="form-group">
+                                                        <span class="form-label">Stock</span>
+                                                        <input class="form-control" name="stock" type="number" placeholder="Masukkan Jumlah Barang" required="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <span class="form-label">Price</span>
+                                                        <input class="form-control" name="price" type="text" placeholder="Masukkan Harga Barang" required="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <span class="form-label">Images</span>
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input" id="customFile">
+                                                            <label class="custom-file-label" for="customFile"><i class="fa  fa-file-image-o"></i> Choose file</label>
+                                                        </div>
+                                                    </div>
                                                     <div class="row">
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <span class="form-label">Hour</span>
-                                                                <select class="form-control">
-                                                                    <option>1</option>
-                                                                    <option>2</option>
-                                                                    <option>3</option>
-                                                                    <option>4</option>
-                                                                    <option>5</option>
-                                                                    <option>6</option>
-                                                                    <option>7</option>
-                                                                    <option>8</option>
-                                                                    <option>9</option>
-                                                                    <option>10</option>
-                                                                    <option>11</option>
-                                                                    <option>12</option>
-                                                                </select>
-                                                                <span class="select-arrow"></span>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-btn">
+                                                                <button type="submit" class="btn btn-outline-light btn-lg orange_color" name="buttonins"> <i class="fa fa-check orange_color"></i> SAVE </button>
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <span class="form-label">Min</span>
-                                                                <select class="form-control">
-                                                                    <option>05</option>
-                                                                    <option>10</option>
-                                                                    <option>15</option>
-                                                                    <option>20</option>
-                                                                    <option>25</option>
-                                                                    <option>30</option>
-                                                                    <option>35</option>
-                                                                    <option>40</option>
-                                                                    <option>45</option>
-                                                                    <option>50</option>
-                                                                    <option>55</option>
-                                                                </select>
-                                                                <span class="select-arrow"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4">
-                                                            <div class="form-group">
-                                                                <span class="form-label">AM/PM</span>
-                                                                <select class="form-control">
-                                                                    <option>AM</option>
-                                                                    <option>PM</option>
-                                                                </select>
-                                                                <span class="select-arrow"></span>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-btn">
+                                                                <a type="button" class="btn btn-outline-danger btn-lg" name="buttoncnc"  href="mdpop.php"><i class="fa fa-times" style="color: white;"></i> CANCEL </a>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+
+                                                    <?php
+                                                    require_once'../includes/koneksi.php';
+                                                    
+                                                    
+                                                    if(isset($_POST['buttonins'])){
+                                                        $id_barang = $_POST['id'];
+                                                        $description = $_POST['desc'];
+                                                        $company = $_POST['company'];
+                                                        $stock = $_POST['stock'];
+                                                        $price = $_POST['price'];
+
+                                                        $sql = "INSERT INTO mdpop (id_barang, description, company, stock, price) VALUES ('$id_barang','$description','$company','$stock','$price')";
+																			
+			                                            if($koneksi->query($sql)===TRUE>0){
+				                                        header("location:mdpop.php");
+			                                            } else {
+				                                        echo "Terjadi kesalahan:".$sql."<br/>".$koneksi->error;
+			                                            }
+
+                                                        
+                                                    }
+                                                    ?>
+                                                </form>
                                             </div>
-                                            <div class="form-btn">
-                                                <button class="submit-btn">Book Now</button>
-                                            </div>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                             </div>
+                          </div>
+                       </div>
                        <!-- end row -->
                     </div>
                     <!-- footer -->
@@ -289,14 +276,5 @@
       <!-- calendar file css -->     
       <script src="js/semantic.min.js"></script>
       <!-- datatables file js -->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-      <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-      <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
-      <script>
-         $(document).ready(function() 
-         {
-            $('#dataTable').DataTable();
-         });
-      </script>
    </body>
-</html>
+</html> 
