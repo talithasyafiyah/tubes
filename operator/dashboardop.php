@@ -78,9 +78,9 @@ session_start();
                      <li>
                         <a href="#report" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-print green_color"></i> <span>Report</span></a>
                         <ul class="collapse list-unstyled" id="report">
-                           <li><a href="reportmdp.html">> <span>Master Data Product</span></a></li>
-                           <li><a href="reportin.html">> <span>Incoming Product</span></a></li>
-                           <li><a href="reportout.html">> <span>Outgoing Product</span></a></li>
+                           <li><a href="reportmdp.php">> <span>Master Data Product</span></a></li>
+                           <li><a href="reportin.php">> <span>Incoming Product</span></a></li>
+                           <li><a href="reportout.php">> <span>Outgoing Product</span></a></li>
                         </ul>
                      </li>
                   </ul>
