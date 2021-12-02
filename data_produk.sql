@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2021 at 04:35 AM
+-- Generation Time: Dec 02, 2021 at 02:45 PM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `data_produk` (
   `no` int(10) NOT NULL,
-  `id_produk` int(10) NOT NULL,
-  `brand` varchar(200) NOT NULL,
+  `id_barang` int(10) NOT NULL,
+  `produk` varchar(200) NOT NULL,
   `perusahaan` varchar(200) NOT NULL,
   `stok` int(10) NOT NULL,
   `harga` varchar(200) NOT NULL
@@ -40,7 +40,7 @@ CREATE TABLE `data_produk` (
 -- Dumping data for table `data_produk`
 --
 
-INSERT INTO `data_produk` (`no`, `id_produk`, `brand`, `perusahaan`, `stok`, `harga`) VALUES
+INSERT INTO `data_produk` (`no`, `id_barang`, `produk`, `perusahaan`, `stok`, `harga`) VALUES
 (1, 101, 'Bimoli', 'PT. Salim Ivomas Pratama Tbk', 15, 'Rp 36.000'),
 (2, 102, 'Sanco', 'PT. Mikie Oleo Nabati', 20, 'Rp 39.000'),
 (3, 103, 'Sania', 'PT. Putra Mas Dua Saudara', 10, 'Rp 37.000'),

@@ -146,11 +146,11 @@
                                        <thead >
                                           <tr>
                                              <th class="text-left align-left font-weight-bold">No</th>
-                                             <th class="text-left align-left font-weight-bold">Id Barang</th>
-                                             <th class="text-left align-left font-weight-bold">Description</th>
-                                             <th class="text-left align-left font-weight-bold">Company</th>
-                                             <th class="text-left align-left font-weight-bold">Stock</th>
-                                             <th class="text-left align-left font-weight-bold">Price</th>
+                                             <th class="text-left align-left font-weight-bold">ID Barang</th>
+                                             <th class="text-left align-left font-weight-bold">Produk</th>
+                                             <th class="text-left align-left font-weight-bold">Perusahaan</th>
+                                             <th class="text-left align-left font-weight-bold">Stok</th>
+                                             <th class="text-left align-left font-weight-bold">Harga</th>
                                           </tr>
                                        </thead>
                                        <tbody>
@@ -158,16 +158,17 @@
 
                                           require_once'../includes/koneksi.php';
 
-                                          $query = mysqli_query($koneksi, "SELECT * FROM mdpop");
+                                          $query = mysqli_query($koneksi, "SELECT * FROM data_produk");
 
+                                          $no = 1;
                                           foreach ($query as $row) {
                                                 echo "<tr>
-                                                         <td class='text-left align-left'>". $row['no'] ."</td> 
+                                                         <td class='text-left align-left'>". $no++ ."</td> 
                                                          <td class='text-left align-left'>". $row['id_barang'] ."</td> 
-                                                         <td class='text-left align-left'>". $row['description'] ."</td> 
-                                                         <td class='text-left align-left'>". $row['company'] ."</td> 
-                                                         <td class='text-left align-left'>". $row['stock'] ."</td> 
-                                                         <td class='text-left align-left'>". $row['price'] ."</td> 
+                                                         <td class='text-left align-left'>". $row['produk'] ."</td> 
+                                                         <td class='text-left align-left'>". $row['perusahaan'] ."</td> 
+                                                         <td class='text-left align-left'>". $row['stok'] ."</td> 
+                                                         <td class='text-left align-left'>". $row['harga'] ."</td> 
                                                       </tr>";
                                           }
 

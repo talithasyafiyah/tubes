@@ -22,6 +22,9 @@ session_start();
       <link rel="icon" href="images/fevicon.png" type="image/png" />
       <!-- bootstrap css -->
       <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <!-- CSS only -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet" >
+      <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet" >
       <!-- site css -->
       <link rel="stylesheet" href="style.css" />
       <!-- responsive css -->
@@ -65,14 +68,14 @@ session_start();
                   <h4>General</h4>
                   <ul class="list-unstyled components">
                      <li class="active">
-                        <a href="dashboardman.html"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+                        <a href="dashboardman.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
                      </li>
                      <li>
                         <a href="#report" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-print green_color"></i> <span>Report</span></a>
                         <ul class="collapse list-unstyled" id="report">
-                           <li><a href="reportmdp.html">> <span>Master Data Product</span></a></li>
-                           <li><a href="reportin.html">> <span>Incoming Product</span></a></li>
-                           <li><a href="reportout.html">> <span>Outgoing Product</span></a></li>
+                           <li><a href="reportmdp.php">> <span>Master Data Product</span></a></li>
+                           <li><a href="reportin.php">> <span>Incoming Product</span></a></li>
+                           <li><a href="reportout.php">> <span>Outgoing Product</span></a></li>
                         </ul>
                      </li>
                   </ul>
