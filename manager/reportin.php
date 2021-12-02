@@ -7,7 +7,7 @@ include '../layout/header.php';
                      <div class="row column_title">
                         <div class="col-md-12">
                            <div class="page_title">
-                              <h2><b>Report</b> <small><i class="fa fa-angle-double-right"></i> Incoming Product <i class="fa fa-angle-double-right"></i>
+                              <h2><b><a href="reportin.php">Report</a></b> <small><i class="fa fa-angle-double-right"></i> Incoming Product <i class="fa fa-angle-double-right"></i>
                               <a type="button" class="btn btn-outline-warning btn-sm"  href="printin.php"><i class="fa fa-print orange_color"></i> Print </a></small></h2>
                            </div>
                         </div>
