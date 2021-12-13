@@ -29,7 +29,7 @@
 			$sql = "INSERT INTO user (username,nama,email,password,level) VALUES ('$username','$nama','$email','$password','Visitor')";
 																			
 			if($koneksi->query($sql)===TRUE){
-				header("location:selamat.php");
+				header("location:login.php?pesan=berhasil");
 			} else {
 				echo "Terjadi kesalahan:".$sql."<br/>".$koneksi->error;
 			}
@@ -75,8 +75,8 @@
 						<div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
 							<div class="text w-100">
 								<img src="images/logo.png" width="150">
-								<h2>Selamat datang</h2>
-								<p>Sudah punya <b style="color: #ff6a3d;">akun?</b></p>
+								<h2>Welcome</h2>
+								<p>Already have an <b style="color: #ff6a3d;">account?</b></p>
 								<a href="login.php" class="btn btn-white btn-outline-white">Sign In</a>
 							</div>
 			      		</div>
@@ -88,27 +88,27 @@
 								  	if(isset($_GET['pesan'])) {
 										if($_GET['pesan'] == "nousername") {
 											echo '<div class="alert alert-warning" role="alert">
-											Username belum diisi.
+											Username must be filled out.
 											</div>';
 										} elseif ($_GET['pesan'] == "nonama") {
 											echo '<div class="alert alert-warning" role="alert">
-											Nama belum diisi.
+											Name must be filled out.
 											</div>';
 										} elseif ($_GET['pesan'] == "noemail") {
 											echo '<div class="alert alert-warning" role="alert">
-											Email belum diisi.
+											Email must be filled out.
 											</div>';
 										} elseif ($_GET['pesan'] == "nopass") {
 											echo '<div class="alert alert-warning" role="alert">
-											Password belum diisi.
+											Password must be filled out.
 											</div>';
 										} elseif ($_GET['pesan'] == "match") {
 											echo '<div class="alert alert-warning" role="alert">
-											Password tidak sesuai.
+											Password did not match.
 											</div>';
 										} elseif ($_GET['pesan'] == "check") {
 											echo '<div class="alert alert-warning" role="alert">
-											Username tidak tersedia.
+											Username already exists.
 											</div>';
 										}
 									}
@@ -122,7 +122,7 @@
 			      			</div>
 
 							<div class="form-group mb-3">
-			      			<label class="label" for="nama">Nama</label>
+			      			<label class="label" for="nama">Name</label>
 			      			<input type="text" class="form-control" placeholder="Nama" name="nama">
 			      			</div>
 

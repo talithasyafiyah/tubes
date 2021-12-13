@@ -1,3 +1,6 @@
+<?php 
+    date_default_timezone_set("Asia/Jakarta"); 
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,12 +18,14 @@
         <!-- site icon -->
         <link rel="icon" href="../../operator/images/logo/LOGO 1.9.png" type="image/png" />
         <!-- font-awesome -->
-        <link rel="stylesheet" href="../../operator/css/all.css" />
+        <link rel="stylesheet" href="../../operators/css/all.css" />
         <!-- bootstrap css -->
         <link rel="stylesheet" href="../../operator/css/bootstrap.min.css" />
-        <!-- CSS only -->
+        <!-- CSS Datatable -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet" >
         <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet" >
+        <!-- CSS Select Option -->
+        <link href="../../operator/css/select2.css" rel="stylesheet" /> 
         <!-- site css -->
         <link rel="stylesheet" href="../../operator/css/style.css" />
         <!-- responsive css -->
@@ -35,6 +40,8 @@
         <link rel="stylesheet" href="../../operator/css/custom.css" />
         <!-- calendar file css -->
         <link rel="stylesheet" href="../../operator/css/semantic.min.css" />
+        <!-- ckeditor -->
+        
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>

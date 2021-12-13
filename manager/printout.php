@@ -1,9 +1,12 @@
 <?php
-
-require_once "./mpdf/vendor/autoload.php";
+require_once "../mpdf/vendor/autoload.php";
 require '../includes/koneksi.php';
 $mpdf = new \Mpdf\Mpdf();
 $query = mysqli_query($koneksi, "SELECT * FROM out_product");
+
+date_default_timezone_set("Asia/Jakarta") . '<br>';
+$date = date("Y-m-d H:i:s"); 
+$date2 = date('l, d F Y');
 
 	$html = '
     <!DOCTYPE html>
@@ -22,19 +25,28 @@ $query = mysqli_query($koneksi, "SELECT * FROM out_product");
 	<div class="container">
         <table align="center">
             <tr>
-                <th>
+                <td align="center">
                     <h3>UD. SATU 7AN</h3>
                     <p>Jalan Dr. T. Mansur No.9, Padang Bulan</p>
                     <p>Kec. Medan Baru, Kota Medan, Sumatera Utara 20222</p>
                     <p>Telp: 021-566-777 Wa: 0812-6015-2610</p>
                     <p>satu7an@gmail.com</p>
-                </th>
+                </td align="center">
             </tr>
         </table>
-        <hr size="2" style="color: #000;">
+        <hr size="2" style="color: #000;">';
 
-        <h4 align="center">LAPORAN STOCK</h4>
-        <table border="1" align="center" cellspacing="0" cellpadding="4">
+    $html .= '
+    <table border="0">
+        <tr>
+            <td><p>'.$date.'</p></td>
+        </tr>
+    </table>
+    ';
+
+    $html .=
+        '<h4 align="center">LAPORAN OUTGOING PRODUCT</h4>
+        <table border="1" align="center" cellspacing="0" cellpadding="4" width="100%">
                 <tr>
                     <th>No</th>
                     <th>Id Keluar</th>
@@ -62,22 +74,24 @@ $query = mysqli_query($koneksi, "SELECT * FROM out_product");
     
     $html .= '
         <tr>
-            <th>
-                <br><br>
-            </th>
+            <td><br><br></td>
         </tr>
         <tr>
-            <th width="500"></th>
-            <th>
+            <td width="430"></td>
+        </tr>
+        <tr>
+            <td width="430"></td>
+            <td align="center">
+                <p>'.$date2.'</p>
                 <h4>WAREHOUSE DEPARTMENT</h4>
                 <p>UD. SATU 7AN</p>
                 <br>
                 <br>
                 <br>
                 <br>
-                <u>Donny Adithya</u>
+                <u>Donny Adithya</u><br>
                 Manager
-            </th>
+            </td>
         </tr>
     ';
 

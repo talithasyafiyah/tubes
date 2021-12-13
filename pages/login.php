@@ -25,8 +25,8 @@
 						<div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
 							<div class="text w-100">
 								<img src="images/logo.png" width="130">
-								<h2>Selamat datang</h2>
-								<p>Belum punya <b style="color: #ff6a3d;">akun?</b></p>
+								<h2>Welcome</h2>
+								<p>Do not have an <b style="color: #ff6a3d;">account?</b></p>
 								<a href="register.php" class="btn btn-white btn-outline-white">Sign Up</a>
 							</div>
 			      		</div>
@@ -39,15 +39,19 @@
 								if(isset($_GET['pesan'])) {
 									if($_GET['pesan'] == "gagal") {
 										echo '<div class="alert alert-warning" role="alert">
-										Username atau password tidak sesuai.
+										Username and password did not match or you do not have an account yet.
 										</div>';
 									} elseif ($_GET['pesan'] == "username") {
 										echo '<div class="alert alert-warning" role="alert">
-										Username belum diisi.
+										Username must be filled out.
 										</div>';
 									} elseif ($_GET['pesan'] == "password") {
 										echo '<div class="alert alert-warning" role="alert">
-										Password belum diisi.
+										Password must be filled out.
+										</div>';
+									} elseif ($_GET['pesan'] == "berhasil") {
+										echo '<div class="alert alert-primary" role="alert">
+										Registration successful, please login.
 										</div>';
 									}
 								}

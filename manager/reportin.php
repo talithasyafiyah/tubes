@@ -1,5 +1,5 @@
 <?php
-include '../layout/header.php';
+include 'layout/header.php';
 ?>
                <!-- dashboard inner -->
                <div class="midde_cont">
@@ -63,5 +63,5 @@ include '../layout/header.php';
                         <!-- end row -->
                      </div>
 <?php
-include '../layout/footer.php';
+include 'layout/footer.php';
 ?>

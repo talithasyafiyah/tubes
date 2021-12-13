@@ -21,25 +21,36 @@ $password = $_POST['password'];
             if (password_verify($password, $password_hash)) {
                 $data = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username'");
                 $multi = mysqli_fetch_assoc($data);
+                $username = $multi['username'];
                 $cekuser = $multi['level'];
+                $email = $row['email'];
+                $nama = $multi['nama'];
 
                 if($cekuser == "Operator") {
                     $_SESSION['username'] = $username;
+                    $_SESSION['nama'] = $nama;
+                    $_SESSION['email'] = $email;
                     $_SESSION['level'] = "Operator";
                     header("location:../operator/dashboardop.php");
 
                 } elseif ($cekuser == "Admin") {
                     $_SESSION['username'] = $username;
+                    $_SESSION['nama'] = $nama;
+                    $_SESSION['email'] = $email;
                     $_SESSION['level'] = "Admin";
                     header("location:../admin/dashboardadm.php");
 
                 } elseif ($cekuser == "Manager") {
                     $_SESSION['username'] = $username;
+                    $_SESSION['nama'] = $nama;
+                    $_SESSION['email'] = $email;
                     $_SESSION['level'] = "Manager";
                     header("location:../manager/dashboardman.php");
 
                 } elseif ($cekuser == "Visitor") {
                     $_SESSION['username'] = $username;
+                    $_SESSION['nama'] = $nama;
+                    $_SESSION['email'] = $email;
                     $_SESSION['level'] = "Visitor";
                     header("location:../visitor/dashboardvis.php");
                     

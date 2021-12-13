@@ -1,4 +1,6 @@
 <?php
-date_default_timezone_set('Asia/Jakarta');
-echo date('d-m-Y H:i:s');
+$txt = "Kom C 2021";
+
+echo "Halo " .$txt;
+
 ?>
