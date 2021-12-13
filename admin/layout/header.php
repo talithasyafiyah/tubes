@@ -1,8 +1,8 @@
 <?php
 session_start();
-    if(empty($_SESSION['level'])) {
-        echo "<script>alert('Maaf, Anda tidak dapat kembali ke dashboard'); document.location='../pages/login.php'</script>";
-    }
+   if(empty($_SESSION['level'])) {
+      echo "<script>alert('Maaf, Anda tidak dapat kembali ke dashboard'); document.location='../pages/login.php'</script>";
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +41,14 @@ session_start();
       <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
       <!-- calendar file css -->
       <link rel="stylesheet" href="js/semantic.min.css" />
+      <!-- Script ChartJS -->
+      <script src="js/chart.js"></script>
+      <!-- Calendar -->
+      <link href="css/fullcalendar.css" rel="stylesheet" />
+      <script src="js/fullcalendar.js"></script>
+      <!-- Teks Animasi -->
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/styleAnimasi.css">
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>

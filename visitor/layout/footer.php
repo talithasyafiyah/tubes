@@ -46,5 +46,7 @@
             $('#dataTable').DataTable();
          });
       </script>
+      <!-- Teks Animasi -->
+      <script src="js/scriptAnimasi.js"></script>
    </body>
 </html>

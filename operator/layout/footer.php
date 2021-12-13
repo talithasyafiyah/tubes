@@ -46,5 +46,36 @@
             $('#dataTable').DataTable();
          });
       </script>
+      <!-- Kalendar -->
+      <script src="js/moment.js"></script>
+      <script>
+         document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+               initialView: 'dayGridMonth',
+               events: [<?php 
+                        $data = mysqli_query($koneksi, "SELECT * FROM kalendar_operator");
+                        
+                        while ($d = mysqli_fetch_array($data)) {     
+                     ?>
+                     {  title: '<?php echo $d['kegiatan']; ?>',
+                        start: '<?php echo $d['mulai']; ?>',
+                        end: '<?php echo $d['selesai']; ?>'    
+                     },
+                     <?php 
+                        } 
+                     ?> ],
+                     
+               selectOverlap: function (event) {
+                  return event.rendering === 'background';
+               }
+            });
+
+            calendar.render();
+         });
+      </script>
+
+      <!-- Teks Animasi -->
+      <script src="js/scriptAnimasi.js"></script>
    </body>
 </html>
