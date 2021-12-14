@@ -34,15 +34,15 @@
   <!-- Main Stylesheet File -->
   <link href="landingPage/css/style.css" rel="stylesheet">
 
-  <!-- Testimoni -->
-  <link href="landingPage/css/testiSlider.css" rel="stylesheet">
-
   <!-- Anggota -->
   <link href="landingPage/css/dataAnggota.css" rel="stylesheet">
   <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,200,500,600,700" rel="stylesheet" type="text/css">
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/ea49b1189f.js" crossorigin="anonymous"></script>
+
+  <!-- Card Testimoni -->
+  <link rel="stylesheet" href="landingPage/css/styleTestimoni.css">
 
   <!-- Intro Slider -->
 	<link href="landingPage/css/normalize.css" rel="stylesheet" type="text/css">
@@ -376,7 +376,7 @@
       Facts Section
     ============================-->
     <section id="facts" class="wow fadeIn">
-      <div class="container">
+      <div class="container mx-auto">
 
       <header class="section-header">
         <h3>Jenis Barang Berdasarkan Kategori</h3>
@@ -950,76 +950,73 @@
           <h3>Testimoni</h3>
         </header>
 
-        <div class="owl-carousel testimonials-carousel">
 
-          <div id="carousel">
-            <div class="hideLeft">
-              <img src="landingPage/img/testimoni/testi1.jpg">
-            </div>
-        
-            <div class="prevLeftSecond">
-              <img src="landingPage/img/testimoni/testi2.jpg">
-            </div>
-        
-            <div class="prev">
-              <img src="landingPage/img/testimoni/testi3.jpg">
-            </div>
-        
-            <div class="selected">
-              <img src="landingPage/img/testimoni/testi4.jpg">
-            </div>
-        
-            <div class="next">
-              <img src="landingPage/img/testimoni/testi5.jpg">
-            </div>
-        
-            <div class="nextRightSecond">
-              <img src="landingPage/img/testimoni/testi6.jpg">
-            </div>
-        
-            <div class="hideRight">
-              <img src="landingPage/img/testimoni/testi7.jpg">
+        <?php 
+            $query = "SELECT * FROM komentar";
+            $hasil = mysqli_query($koneksi, $query);
+            foreach($hasil as $data) {
+          ?>
+
+          <div class="section_our_solution">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="our_solution_category">
+                  <div class="solution_cards_box">
+                    <div class="solution_card">
+                      <div class="hover_color_bubble"></div>
+                      <div class="solu_title">
+                        <h3>
+                          <?php echo $data['nama']; ?>
+                        </h3>
+                        <h6>
+                          <?php echo $data['email']; ?> |
+                          <?php echo $data['tanggal']; ?>
+                        </h6>
+                        <hr>
+                      </div>
+                      <div class="solu_description mt-4">
+                        <p>
+                          <?php echo $data['comment']; ?>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
             </div>
           </div>
-        </div>
+            
+        <?php 
+          }
+        ?>
 
-        <div class="table-responsive">
-          <table class="table table-bordered table-striped table-hover">
-            <thead class="thead-dark">
-                  <tr>
-                      <th scope="col">No</th>
-                      <th scope="col">Nama</th>
-                      <th scope="col">Email</th>
-                      <th scope="col">Tanggal</th>
-                      <th scope="col">Komentar</th>
-                  </tr>
-            </thead>
-            <tbody>
 
-                  <?php 
-                      $no = 1;
-                      $query = "SELECT * FROM komentar";
-                      $hasil = mysqli_query($koneksi, $query);
-                      foreach($hasil as $data) {
-                  ?>
 
-                  <tr>
-                      <td><?php echo $no++; ?></td>
-                      <td><?php echo $data['nama']; ?></td>
-                      <td><?php echo $data['email']; ?></td>
-                      <td><?php echo $data['tanggal']; ?></td>
-                      <td><?php echo $data['comment']; ?></td>
-                  </tr>
-                  
-                  <?php 
-                      }
-                  ?>
-                  
-            </tbody>
-          </table>
-        </div>
+        <!-- <div class="row">
+          <?php 
+            $query = "SELECT * FROM komentar";
+            $hasil = mysqli_query($koneksi, $query);
+            foreach($hasil as $data) {
+          ?>
 
-        
+            
+            <div class="col-4 mx-auto">
+
+              <div class="card bg-light border-dark mb-3" style="max-width: 100rem;">
+                <div class="card-header"><b><?php echo $data['nama']; ?></b> <br> <?php echo $data['email']; ?></div>
+                <div class="card-body">
+                  <div class="card-text"><?php echo $data['comment']; ?></div>
+                </div>
+                <div class="card-footer"><?php echo $data['tanggal']; ?></div>
+              </div>
+
+            </div>
+
+          <?php 
+              }
+          ?>
+        </div> -->
+            
+
 
       </div>
     </section>
@@ -1305,9 +1302,6 @@
   
   <!-- Main Javascript File -->
   <script src="landingPage/js/main.js"></script>
-
-  <!-- Testimoni JavaScript -->
-  <script src="landingPage/js/testimoni.js"></script>
 
   <!-- Intro Slider Javascript -->
   <script src="landingPage/js/imagesloaded.pkgd.min.js"></script>

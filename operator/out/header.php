@@ -72,7 +72,7 @@
             <div class="sidebar_blog_2">
                 <h4>General</h4>
                 <ul class="list-unstyled components">
-                    <li><a href="dashboardop.html"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a></li>
+                    <li><a href="../dashboardop.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a></li>
                     <li>
                         <a href="#dataproduct" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cubes purple_color"></i> <span>Data Product</span></a>
                         <ul class="collapse list-unstyled" id="dataproduct">

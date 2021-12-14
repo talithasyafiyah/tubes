@@ -1,8 +1,8 @@
 <?php
 session_start();
-    if(empty($_SESSION['level'])) {
-        echo "<script>alert('Maaf, Anda tidak dapat kembali ke dashboard'); document.location='../pages/login.php'</script>";
-    }
+   if(empty($_SESSION['level'])) {
+      echo "<script>alert('Maaf, Anda tidak dapat kembali ke dashboard'); document.location='../pages/login.php'</script>";
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,6 +46,9 @@ session_start();
       <!-- Teks Animasi -->
       <link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="css/styleAnimasi.css">
+      <!-- Komentar -->
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -80,6 +83,8 @@ session_start();
                         <a href="dashboardvis.php"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
                      </li>
                      <li><a href="mdpop.php"><i class="fa fa-desktop orange_color2"></i> <span>Master Data Product</span></a></li>
+                     <li><a href="testimoni.php"><i class="fa fa-comments-o red_color"></i> <span>Testimoni</span></a></li>
+                     <li><a href="commentVisitor.php"><i class="fa fa-thumbs-o-up green_color"></i> <span>Commentar</span></a></li>
                   </ul>
                </div>
             </nav>
@@ -117,4 +122,4 @@ session_start();
                      </div>
                   </nav>
                </div>
-              <!-- end topbar -->
+            <!-- end topbar -->
